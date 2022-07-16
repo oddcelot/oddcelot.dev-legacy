@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "bungcip.better-toml"
+  ],
+  "unwantedRecommendations": []
+}
