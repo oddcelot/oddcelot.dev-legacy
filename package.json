@@ -8,6 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy:dev": "netlify deploy --build",
+    "deploy:prod": "netlify deploy --build --prod",
     "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
