@@ -1,8 +1,8 @@
- [![astro](https://user-images.githubusercontent.com/3611928/167888733-9bf21eda-d051-46f3-9184-12b14e21a10a.png)](https://ntl.fyi/3LZGn73)
+[![astro](https://user-images.githubusercontent.com/3611928/167888733-9bf21eda-d051-46f3-9184-12b14e21a10a.png)](https://ntl.fyi/3LZGn73)
 
-# Astro Quickstart Template   
+# Astro Quickstart Template
 
-This is a bare-bones Astro project that has everything you need to quickly deploy it to [Netlify](https://netlify.com). 
+This is a bare-bones Astro project that has everything you need to quickly deploy it to [Netlify](https://netlify.com).
 
 Hate reading, here's a video: https://youtu.be/SknFflQVOys!
 
@@ -16,34 +16,33 @@ Click this button and it will help you create a new repo, create a new Netlify p
 
 ## 💫 Regular Setup
 
- ### 1. Cloning + Install Packages
+### 1. Cloning + Install Packages
 
-  - Clone this repo with one of these options:
+- Clone this repo with one of these options:
 
-    - Click the 'Use this template' button at the top of the page
-    - Or via the command line `git clone https://github.com/netlify-templates/astro-quickstart`
+  - Click the 'Use this template' button at the top of the page
+  - Or via the command line `git clone https://github.com/netlify-templates/astro-quickstart`
 
-  - Then install the necessary packages and run the project locally to make sure everything works.
+- Then install the necessary packages and run the project locally to make sure everything works.
 
-    ```bash
-    npm install
-    npm run dev
-    ```
+  ```bash
+  npm install
+  npm run dev
+  ```
 
-  > Alternatively, you can run this locally with [the Netlify CLI](https://docs.netlify.com/cli/get-started/)'s by running the `netlify dev` command for more options like receiving a live preview to share (`netlify dev --live`) and the ability to test [Netlify Functions](https://www.netlify.com/products/functions) and [redirects](https://docs.netlify.com/routing/redirects/). 
+> Alternatively, you can run this locally with [the Netlify CLI](https://docs.netlify.com/cli/get-started/)'s by running the `netlify dev` command for more options like receiving a live preview to share (`netlify dev --live`) and the ability to test [Netlify Functions](https://www.netlify.com/products/functions) and [redirects](https://docs.netlify.com/routing/redirects/).
 
-  ### 2. Deploying
-  - Install the Netlify CLI globally `npm install netlify-cli -g`
-    
-  - Run `npm run build`
+### 2. Deploying
 
-  - Then use the `netlify deploy` for a deploy preview link or `netlify deploy --prod` to deploy to production
+- Install the Netlify CLI globally `npm install netlify-cli -g`
+- Run `npm run build`
 
-  Here are a few other ways you can deploy this template:
-    
-  - Use the Netlify CLI's create from template command `netlify sites:create-template astro-quickstart` which will create a repo, Netlify project, and deploy it
-    
-  - If you want to utilize continuous deployment through GitHub webhooks, run the Netlify command `netlify init` to create a new project based on your repo or `netlify link` to connect your repo to an existing project
+- Then use the `netlify deploy` for a deploy preview link or `netlify deploy --prod` to deploy to production
+
+Here are a few other ways you can deploy this template:
+
+- Use the Netlify CLI's create from template command `netlify sites:create-template astro-quickstart` which will create a repo, Netlify project, and deploy it
+- If you want to utilize continuous deployment through GitHub webhooks, run the Netlify command `netlify init` to create a new project based on your repo or `netlify link` to connect your repo to an existing project
 
 ## Astro 💙 Netlify Resources
 
