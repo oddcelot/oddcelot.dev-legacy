@@ -6,9 +6,9 @@ import githubImage from "openmoji/color/svg/E045.svg?raw";
 import waveImage from "openmoji/color/svg/1F44B.svg?raw";
 import linkedinImage from "openmoji/color/svg/E046.svg";
 import twitterImage from "openmoji/color/svg/E040.svg";
-import yarnStyle from "./yarn.scss";
-import githubStyle from "./github.scss";
-import waveStyle from "./wave.scss";
+import "./yarn.scss";
+import "./github.scss";
+import "./wave.scss";
 import "./Playground.scss";
 
 import { currentCursor, setCurrentCursor } from "../../devStore";
@@ -100,21 +100,19 @@ export default function Playground({ children }) {
           data-name="yarn"
           data-showing={currentCursor() === "yarn"}
           innerHTML={yarnImage}
-          style={yarnStyle}
+
         />
         <div
           class="github"
           data-name="github"
           data-showing={currentCursor() === "github"}
           innerHTML={githubImage}
-          style={githubStyle}
         />
         <div
           class="wave"
           data-name="wave"
           data-showing={currentCursor() === "wave"}
           innerHTML={waveImage}
-          style={waveStyle}
         />
       </Portal>
     </div>
