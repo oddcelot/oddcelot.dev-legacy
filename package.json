@@ -4,7 +4,7 @@
   "private": true,
   "description": "This is the code for oddcelot.dev. Feel free to poke around. Suggestions welcome 🙂",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -15,14 +15,16 @@
   "devDependencies": {
     "@astrojs/solid-js": "0.4.0",
     "astro": "1.0.0-beta.72",
-    "node-html-parser": "^5.3.3",
-    "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.1.1",
+    "node-html-parser": "5.3.3",
+    "path": "0.12.7",
+    "prettier": "2.7.1",
+    "prettier-plugin-astro": "0.1.1",
     "sass": "1.53.0"
   },
   "dependencies": {
     "cypress": "10.3.0",
-    "openmoji": "^14.0.0",
+    "devtools-detect": "4.0.0",
+    "openmoji": "14.0.0",
     "solid-js": "1.4.7"
   }
 }

@@ -1,0 +1,10 @@
+.yarn {
+  transform: scale(0.1);
+  opacity: 0;
+  transition: all 0.2s;
+
+  &[data-showing="true"] {
+    opacity: 1;
+    transform: scale(2.5);
+  }
+}

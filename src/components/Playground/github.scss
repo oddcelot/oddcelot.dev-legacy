@@ -1,0 +1,10 @@
+.github {
+  transform: scale(15);
+  opacity: 0;
+  transition: all 0.2s;
+
+  &[data-showing="true"] {
+    opacity: 1;
+    transform: scale(6);
+  }
+}

@@ -1,37 +1,15 @@
 ---
-import Layout from "../components/Layout.astro";
-
-import Counter from "../components/Counter/Counter";
-import yarnImage from "openmoji/color/svg/1F9F6.svg";
-import catImage from "openmoji/color/svg/1F431-200D-1F4BB.svg?raw";
+import Layout from "@/components/Layout.astro";
+import oddcelotImage from "@assets/oddcelot.svg?raw";
+import Cursor from "@/components/Cursor/Cursor";
+import Playground from "@/components/Playground/Playground";
 ---
 
 <Layout title="Astro Quickstart">
-  <main>
-    <div class="header">
-
-    </div>
-
-    <div class="emoji" set:html={catImage}></div>
-    <Counter client:visible>
-
-      <h1>Hello, Solid!</h1>
-    </Counter>
-    <img class="emoji" src={yarnImage} />
-
-    <footer class="footer">
-
-    </footer>
-  </main>
+  <Cursor client:visible />
+  <Playground client:visible
+    ><a href="//github.com/oddcelot" title="Visit oddcelot on GitHub"
+      ><div class="emoji" set:html={oddcelotImage}></div>
+    </a>
+  </Playground>
 </Layout>
-<style>
-  html {
-    background-color: unset;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-</style>

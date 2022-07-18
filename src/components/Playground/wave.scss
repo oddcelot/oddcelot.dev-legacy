@@ -1,0 +1,25 @@
+.wave {
+  transform: scale(0.1);
+  opacity: 0;
+  transition: all 0.2s;
+  transform-origin: 50% 70%;
+
+  #skin path {
+    fill: var(--color-cat);
+  }
+
+  &[data-showing="true"] {
+    opacity: 1;
+    transform: scale(2) translate(0%, -100%);
+    animation: wave alternate 0.5s 3 ease-in-out;
+  }
+}
+
+@keyframes wave {
+  from {
+    transform: scale(2) translate(0%, -100%) rotate(0.15turn);
+  }
+  to {
+    transform: scale(2) translate(0%, -100%) rotate(-0turn);
+  }
+}
