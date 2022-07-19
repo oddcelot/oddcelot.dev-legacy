@@ -10,11 +10,14 @@
     "preview": "astro preview",
     "deploy:dev": "netlify deploy --build",
     "deploy:prod": "netlify deploy --build --prod",
-    "format": "prettier --write --plugin-search-dir=. ."
+    "format": "prettier --write --plugin-search-dir=. .",
+    "generate:favicons": "real-favicon generate src/faviconDefs.json faviconData.json public"
   },
   "devDependencies": {
     "@astrojs/solid-js": "0.4.0",
     "astro": "1.0.0-beta.72",
+    "cli-real-favicon": "0.0.8",
+    "cypress": "10.3.0",
     "node-html-parser": "5.3.3",
     "path": "0.12.7",
     "prettier": "2.7.1",
@@ -22,8 +25,9 @@
     "sass": "1.53.0"
   },
   "dependencies": {
-    "cypress": "10.3.0",
+    "@astrojs/netlify": "^0.4.10",
     "devtools-detect": "4.0.0",
+    "functions": "link:@astrojs/netlify/functions",
     "openmoji": "14.0.0",
     "solid-js": "1.4.7"
   }

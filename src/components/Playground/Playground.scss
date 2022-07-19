@@ -27,7 +27,7 @@
     border-radius: 0.5rem;
 
     i {
-      color: firebrick;
+      color: #ff52f9;
     }
 
     &::before {
@@ -52,6 +52,7 @@
     }
 
     a {
+      cursor: none;
       display: block;
       position: relative;
       transition: transform ease-in 0.2s;

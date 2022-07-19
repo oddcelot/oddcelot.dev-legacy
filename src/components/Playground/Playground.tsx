@@ -11,7 +11,7 @@ import "./github.scss";
 import "./wave.scss";
 import "./Playground.scss";
 
-import { currentCursor, setCurrentCursor } from "../../devStore";
+import { currentCursor, setCurrentCursor } from "@/devStore";
 
 export default function Playground({ children }) {
   const [plaything, setPlaything] = createSignal({
@@ -81,10 +81,10 @@ export default function Playground({ children }) {
       >
         <div class="links">
           <a href="//linked.in/oddcelot" title="Visit oddcelot on LinkedIn">
-            <img src={linkedinImage} />
+            <img alt="LinkedIn" src={linkedinImage} />
           </a>
           <a href="//twitter.com/oddcelot" title="Visit oddcelot on Twitter">
-            <img src={twitterImage} />
+            <img alt="Twitter" src={twitterImage} />
           </a>
         </div>
         {devToolsShown() && (

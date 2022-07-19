@@ -5,11 +5,48 @@ import Cursor from "@/components/Cursor/Cursor";
 import Playground from "@/components/Playground/Playground";
 ---
 
-<Layout title="Astro Quickstart">
-  <Cursor client:visible />
+<script>
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      document.title = "😸 long time no see";
+    } else {
+      document.title = " 🙀 come back pls";
+    }
+  });
+</script>
+
+<Layout>
+  <Fragment slot="header">
+    <title>oddcelots Playground</title>
+    <meta
+      name="description"
+      content="Personal Playground and web dev petri dish 🧫"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <meta
+      property="og:title"
+      content="Stefan Kopco aka oddcelot | Spreading some frontend love ❤️"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={Astro.site + "assets/oddcelot.svg"} />
+    <meta property="og:url" content={Astro.canonicalURL.href} />
+    <meta
+      property="og:description"
+      content="Personal Playground and web dev petri dish 🧫"
+    />
+  </Fragment>
+  <Cursor client:load />
   <Playground client:visible
     ><a href="//github.com/oddcelot" title="Visit oddcelot on GitHub"
-      ><div class="emoji" set:html={oddcelotImage}></div>
+      ><div class="oddcelot" set:html={oddcelotImage}></div>
     </a>
   </Playground>
 </Layout>
+
+
+<style>
+  .oddcelot {
+    width: 7rem;
+  }
+</style>
