@@ -38,12 +38,13 @@ import Playground from "@/components/Playground/Playground";
   </Fragment>
   <Cursor client:load />
   <Playground client:visible
-    ><a href="//github.com/oddcelot" title="Visit oddcelot on GitHub"
+    ><a
+      href="//github.com/oddcelot"
+      aria-label="Visit oddcelot on GitHub"
       ><div class="oddcelot" set:html={oddcelotImage}></div>
     </a>
   </Playground>
 </Layout>
-
 
 <style>
   .oddcelot {

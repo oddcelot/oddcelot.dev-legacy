@@ -16,6 +16,7 @@
     "types": ["astro/client"],
     // Add alias resolving
     "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],

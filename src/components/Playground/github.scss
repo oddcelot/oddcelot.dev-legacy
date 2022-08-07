@@ -1,10 +1,18 @@
 .github {
-  transform: scale(15);
-  opacity: 0;
-  transition: all 0.2s;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  display: block;
 
-  &[data-showing="true"] {
-    opacity: 1;
-    transform: scale(6);
+  .cursor {
+    width: 12rem;
+    animation: appear 0.2s forwards;
+  }
+
+  .cursor-message {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -1rem);
+    transform-origin: 500%, 500%;
   }
 }

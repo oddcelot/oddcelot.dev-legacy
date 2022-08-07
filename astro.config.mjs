@@ -1,10 +1,13 @@
 import { defineConfig } from "astro/config";
-import solid from "@astrojs/solid-js";
-import netlify from '@astrojs/netlify/functions';
+import Netlify from "@astrojs/netlify/functions";
+import Solid from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://oddcelot.dev",
-  adapter: netlify(),
-  integrations: [solid()],
+  adapter: Netlify(),
+  integrations: [Solid()],
+  experimental: {
+    integrations: true,
+  },
 });

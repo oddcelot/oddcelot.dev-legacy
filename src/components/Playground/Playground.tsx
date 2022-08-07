@@ -11,7 +11,11 @@ import "./github.scss";
 import "./wave.scss";
 import "./Playground.scss";
 
-import { currentCursor, setCurrentCursor } from "@/devStore";
+import { currentCursor, setCurrentCursor, cursorMessage } from "@/cursorStore";
+
+export function Nested() {
+  return <div innerHTML="yoooo"></div>;
+}
 
 export default function Playground({ children }) {
   const [plaything, setPlaything] = createSignal({
@@ -19,21 +23,28 @@ export default function Playground({ children }) {
     showing: false,
   });
   const [devToolsShown, setDevToolsShown] = createSignal(false);
-  const message = "Hi. Check the page again ☝️";
+  const [hasConsoleMessage, setHasConsoleMessage] = createSignal(false);
+  // const message = "Hi. Check the page again 🤫";
+  const message = [
+    "%c" + "Hi. Check the page again 🤫",
+    "color: #ff52f9; font-weight:bold;",
+  ];
 
   if (typeof window !== "undefined") {
     window.addEventListener("devtoolschange", (ev) => {
       // let the note show also after you potentially close the dev tools again
-      if (ev.detail.isOpen) {
+      if (ev.detail.isOpen && !hasConsoleMessage()) {
+        console.info(...message);
         setDevToolsShown(true);
-        console.info(message);
+        setHasConsoleMessage(true);
       }
     });
 
     // also perform an initial check
     if (devTools.isOpen) {
+      console.info(...message);
       setDevToolsShown(true);
-      console.info(message);
+      setHasConsoleMessage(true);
     }
   }
 
@@ -42,7 +53,7 @@ export default function Playground({ children }) {
     setPlaything({ rendered: true, showing: true });
   };
   const handleMouseLeave = (ev) => {
-    setCurrentCursor();
+    setCurrentCursor(undefined);
     setPlaything({ rendered: true, showing: false });
   };
   const handleAnimalEnter = (ev) => {
@@ -80,10 +91,16 @@ export default function Playground({ children }) {
         onMouseLeave={handleSocialLeave}
       >
         <div class="links">
-          <a href="//linked.in/oddcelot" title="Visit oddcelot on LinkedIn">
+          <a
+            href="//linked.in/oddcelot"
+            aria-label="Visit oddcelot on LinkedIn"
+          >
             <img alt="LinkedIn" src={linkedinImage} />
           </a>
-          <a href="//twitter.com/oddcelot" title="Visit oddcelot on Twitter">
+          <a
+            href="//twitter.com/oddcelot"
+            aria-label="Visit oddcelot on Twitter"
+          >
             <img alt="Twitter" src={twitterImage} />
           </a>
         </div>
@@ -94,27 +111,50 @@ export default function Playground({ children }) {
         )}
       </div>
 
-      <Portal mount={document.getElementById("cursors")}>
-        <div
-          class="yarn"
-          data-name="yarn"
-          data-showing={currentCursor() === "yarn"}
-          innerHTML={yarnImage}
+      {currentCursor() === "yarn" && (
+        <Portal mount={document.getElementById("cursor")}>
+          <div
+            class="yarn"
+            data-name="yarn"
+            data-showing={currentCursor() === "yarn"}
+          >
+            <div class="cursor" innerHTML={yarnImage} />
+            {cursorMessage() && (
+              <span class="cursor-message">{cursorMessage()}</span>
+            )}
+          </div>
+        </Portal>
+      )}
 
-        />
-        <div
-          class="github"
-          data-name="github"
-          data-showing={currentCursor() === "github"}
-          innerHTML={githubImage}
-        />
-        <div
-          class="wave"
-          data-name="wave"
-          data-showing={currentCursor() === "wave"}
-          innerHTML={waveImage}
-        />
-      </Portal>
+      {currentCursor() === "github" && (
+        <Portal mount={document.getElementById("cursor")}>
+          <div
+            class="github"
+            data-name="github"
+            data-showing={currentCursor() === "github"}
+          >
+            <div class="cursor" innerHTML={githubImage} />
+            {cursorMessage() && (
+              <span class="cursor-message">{cursorMessage()}</span>
+            )}
+          </div>
+        </Portal>
+      )}
+
+      {currentCursor() === "wave" && (
+        <Portal mount={document.getElementById("cursor")}>
+          <div
+            class="wave"
+            data-name="wave"
+            data-showing={currentCursor() === "wave"}
+          >
+            <div class="cursor" innerHTML={waveImage} />
+            {cursorMessage() && (
+              <span class="cursor-message">{cursorMessage()}</span>
+            )}
+          </div>
+        </Portal>
+      )}
     </div>
   );
 }
